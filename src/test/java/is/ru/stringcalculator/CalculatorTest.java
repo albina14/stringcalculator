@@ -29,10 +29,19 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
-  @Test
+    @Test
+    public void testMoreMultipleNumbers(){
+    	assertEquals(28, Calculator.add("1,2,3,4,5,6,7"));
+    }
+
+    @Test
     public void testLinesBetweenTheNumbers(){
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
+    @Test
+    public void testDelimiter(){
+    	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
 
 }
