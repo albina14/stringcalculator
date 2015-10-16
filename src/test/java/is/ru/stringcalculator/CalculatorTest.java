@@ -44,4 +44,10 @@ public class CalculatorTest {
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
 
-}
+    @Test
+    public void test1000(){
+    	assertEquals(2, Calculator.add("1001,2"));
+    }
+
+ }
+ 

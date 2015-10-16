@@ -19,6 +19,7 @@ public class Calculator {
 			return toInt(text);
 		}
 
+
 	private static String[] anotherDelimiter(String numbers){
     	String anotherDelimiter = numbers.substring(2,3);
     	numbers = numbers.substring(3);
@@ -34,14 +35,21 @@ public class Calculator {
 
 	private static String[] splitNumbers(String numbers){
 	    return numbers.split(",|\n");
-	}
-      
+    }
+
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
-		    total += toInt(number);
+        	if(toInt(number) <= 1000)
+        	{
+        		total += toInt(number);
+        	}
+		   
 		}
 		return total;
-	}
-
+    }   
 }
+
+
+
+    
