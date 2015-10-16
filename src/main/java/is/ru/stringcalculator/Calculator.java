@@ -44,6 +44,15 @@ public class Calculator
     {
     	String anotherDelimiter = numbers.substring(2,3);
 
+    	if (anotherDelimiter.equals("["))
+    	{
+    		numbers = numbers.replace("*","\\*");
+    		int length = numbers.indexOf("]");
+    		anotherDelimiter = numbers.substring (3,length);
+    		numbers = numbers.substring(length + 1);
+    	}
+    	else 
+
 	    	numbers = numbers.substring(3);   
 	    	numbers = numbers.replace("\n","");
 	    	numbers = numbers.replace(anotherDelimiter,","); 

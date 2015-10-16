@@ -71,6 +71,12 @@ public class CalculatorTest {
     {
         assertEquals("Negatives not allowed: -1", Calculator.add("-1,2"));
     }
+
+     @Test
+    public void testDelimiterLength()
+    {
+    	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+    }
     
 }
 
