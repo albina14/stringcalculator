@@ -65,18 +65,29 @@ public class CalculatorTest {
     }
 
 
-    @Test
-    (expected = IllegalArgumentException.class)
+    @Test (expected = RuntimeException.class)
     public void testNegativeNumbers()
     {
         assertEquals("Negatives not allowed: -1", Calculator.add("-1,2"));
     }
 
-     @Test
+    @Test
     public void testDelimiterLength()
     {
     	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
     }
+    
+    @Test
+    public void testDelimiterLength2()
+    {
+    	assertEquals(8, Calculator.add("//[&&&&]\n2&&&&2&&&&4"));
+    }
+
+    /*@Test
+    public void testMultipleDelimiters()
+    {
+    	assertEquals(6, Calculator.add("“//[*][%]\n1*2%3"));
+    }*/
     
 }
 

@@ -42,23 +42,41 @@ public class Calculator
 
     private static String[] anotherDelimiter(String numbers)
     {
-    	String anotherDelimiter = numbers.substring(2,3);
-
+    	String anotherDelimiter = numbers.substring(2,3); 
+    	int length = 0;
+    
     	if (anotherDelimiter.equals("["))
     	{
     		numbers = numbers.replace("*","\\*");
-    		int length = numbers.indexOf("]");
+    		length = numbers.indexOf("]",1);
     		anotherDelimiter = numbers.substring (3,length);
     		numbers = numbers.substring(length + 1);
     	}
-    	else 
 
-	    	numbers = numbers.substring(3);   
+    	else
+	    	numbers = numbers.substring(3);  
+
 	    	numbers = numbers.replace("\n","");
 	    	numbers = numbers.replace(anotherDelimiter,","); 
+	
 
     	return splitNumbers(numbers);
 	}
+
+	/*private static String[] countDelimiters(String[] numbers)
+	{
+		int countDelimiters=0;
+		for(number:numbers)
+		{
+			if(number.equals("["))
+			{
+				countDelimiters++;
+			}
+		}
+
+		return countDelimiters;
+
+	}*/
 
 	private static String[] checkForNegatives(String[] numbers)
 	{
@@ -75,7 +93,7 @@ public class Calculator
 
 		allNegatives = ("Negatives not allowed: " + allNegatives);
 
-		throw new IllegalArgumentException(allNegatives);
+		throw new RuntimeException(allNegatives);
 
     }
 
