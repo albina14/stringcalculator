@@ -83,11 +83,11 @@ public class CalculatorTest {
     	assertEquals(8, Calculator.add("//[&&&&]\n2&&&&2&&&&4"));
     }
 
-    /*@Test
+    @Test
     public void testMultipleDelimiters()
     {
-    	assertEquals(6, Calculator.add("“//[*][%]\n1*2%3"));
-    }*/
+    	assertEquals(6, Calculator.add("//[*][%]\n1*2%3"));
+    }
     
 }
 
